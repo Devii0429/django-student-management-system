@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center p-5">
+                <h1 class="display-5 fw-bold">Welcome to Student Management System</h1>
+                <p class="lead text-muted">Manage students, courses, attendance, and more — all in one beautiful dashboard.</p>
+                <hr class="my-4">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'student_dashboard' %}" class="btn btn-primary btn-lg px-5">Go to Dashboard</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-success btn-lg px-5">Login to Get Started</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
